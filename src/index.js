@@ -8,8 +8,9 @@ const app = express();
 
 // Get ip route
 app.get("/", (req, res) => {
-	const ip =
+	let ip =
 		req.ip || req.headers["X-Forwarded-For"] || req.headers["X-Requested-With"];
+	ip = ip.replace("::ffff:", "");
 
 	res.send(ip);
 });
