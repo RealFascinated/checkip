@@ -3,8 +3,9 @@ FROM node:18-alpine
 RUN apk add libc6-compat
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+
+COPY . .
 
 RUN npm i
 
