@@ -15,10 +15,9 @@ app.disable("x-powered-by");
 
 // Get ip route
 app.get("/", (req, res) => {
-	console.log(req.headers);
 	const ip =
-		req.headers["X-Forwarded-For"] ||
-		req.headers["Cf-Connecting-Ip"] ||
+		req.headers["cf-connecting-ip"] ||
+		req.headers["x-forwarded-for"] ||
 		req.ip ||
 		req.connection.remoteAddress ||
 		req.socket.remoteAddress ||
