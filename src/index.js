@@ -9,7 +9,8 @@ const app = express();
 // Get ip route
 app.get("/", (req, res) => {
 	const ip =
-		req.headers["CF-Connecting-IP"] ||
+		req.headers["X-Forwarded-For"] ||
+		req.headers["Cf-Connecting-Ip"] ||
 		req.ip ||
 		req.connection.remoteAddress ||
 		req.socket.remoteAddress ||
