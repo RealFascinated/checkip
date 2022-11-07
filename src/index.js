@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3000;
 // Express application
 const app = express();
 
+// Security settings
+app.disable("x-powered-by");
+
 // Get ip route
 app.get("/", (req, res) => {
 	const ip =
