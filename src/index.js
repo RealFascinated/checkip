@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 		req.socket.remoteAddress ||
 		req.connection.socket.remoteAddress;
 
-	res.send(ip);
+	res.status(200).json({ status: "OK", ip: ip });
 });
 
 // Start express server
