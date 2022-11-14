@@ -1,5 +1,5 @@
-const express = require("express");
-const morgan = require("morgan");
+import express from "express";
+import morgan from "morgan";
 
 // Consts
 const PORT = process.env.PORT || 3000;
